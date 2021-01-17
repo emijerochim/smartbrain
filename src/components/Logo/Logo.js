@@ -1,4 +1,3 @@
-import { logDOM } from '@testing-library/react';
 import React from 'react';
 import Tilt from 'react-tilt';
 import brain from './brain.png';
