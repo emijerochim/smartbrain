@@ -42,6 +42,7 @@ ___
  * Visual Studio Code
  * Git
  * NPM
+ * Trello
 
 ___
 
