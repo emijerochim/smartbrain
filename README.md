@@ -2,7 +2,7 @@
 
 ## Description
 
-🧠 Api-consumed face detection web application with users database and login/logout system
+🧠 (Frontend) Api-consumed face detection web application with users database and login/logout system
 ____
 
 
