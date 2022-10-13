@@ -1,4 +1,4 @@
-# SmartBrain
+## 🧠 SmartBrain
 
 ## Description
 
