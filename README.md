@@ -1,58 +1,31 @@
 ## 🧠 SmartBrain
 
-## Description
+It auths the login and asks the user for a picture, sends it to the Clarifai API and uses the response data to draw a face detection box on top of it.
 
-🧠 (Frontend) Api-consumed face detection web application with users database and login/logout system
-____
+_________________________
 
+### 📱 Frontend
+HTML5, CSS3, SASS, React.js
 
-## About
+### 🖥️ Backend
+Node.js, Express, Bcrypt, Knex, Google Cloud Engine
 
-📅 **Start Date:** January 2021.
+### 💾 Database
+PostgreSQL
 
-✅ **Last Update:** April 2021.
+### 🧰 Tools
+Git, VS Code, Nodemon, Trello
 
-⏸ **Status:** Complete
-___
+### 📚 Libraries
+Clarifai, Tachyons, react-particles-js
 
+________________
 
-## Tech stack
+### Frontend code:
+[github.com/emijerochim/smartbrain](http://github.com/emijerochim/smartbrain)
 
-💬 **Languages:**
- * Javascript
- 
+### Backend code:
+[github.com/emijerochim/smartbrain-api](http://github.com/emijerochim/smartbrain-api)
 
-🛠 **Frameworks/Libraries:**
- * React
- * Tachyons
-
-
-🖥️ **Backend Development:**
- * Node.js
- * Express
- * Bcrypt
- * Knex
-
-
-💾 **Database:**
- * PostgreSQL
- 
-
-🧰 **Tools:**
- * Visual Studio Code
- * Git
- * NPM
- * Trello
-
-___
-
-
-## APIs consumed
-
-🔰 https://www.clarifai.com/use-cases/facial-recognition
-___
-
-
-## License
-
-📝 Creative Commons - Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+### Demo:
+[emijerochim.com/smartbrain](http://emijerochim.com/smartbrain)
