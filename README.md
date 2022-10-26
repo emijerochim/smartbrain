@@ -8,7 +8,7 @@ _________________________
 * HTML5, CSS3, SASS, React.js
 
 ### 🖥️ Backend
-* Node.js, Express, Bcrypt, Knex, Google Cloud Engine
+* Node.js, Express, Bcrypt, Knex
 
 ### 💾 Database
 * PostgreSQL
@@ -17,7 +17,7 @@ _________________________
 * Git, VS Code, Nodemon, Trello
 
 ### 📚 Libraries
-* Clarifai, Tachyons, react-particles-js
+* Clarifai, Tachyons
 
 ________________
 
