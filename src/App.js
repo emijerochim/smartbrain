@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Particles from "react-particles-js";
+import Particles from "react-tsparticles";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
 import Rank from "./components/Rank/Rank";
@@ -57,7 +57,7 @@ class App extends Component {
   calculateFaceLocation = (data) => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById("inputimage");
+    const image = document.getElementById("input-image");
     const width = Number(image.width);
     const height = Number(image.height);
     return {
