@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import apiUrl from "../apiUrl";
+import apiUrl from "./apiUrl";
 import "./App.css";
 
 function App() {
@@ -13,9 +13,9 @@ function App() {
     email: "",
     entries: 0,
     joined: "",
-    loggedIn : false
+    loggedIn: false,
   });
-  const [imageUrl , setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [box, setBox] = useState({});
   const [input, setInput] = useState("");
 
@@ -37,8 +37,8 @@ function App() {
     setBox({ box });
   };
 
-  const  onInputChange = (event) => {
-    setInput({ input: event.target.value });
+  const onInputChange = (event) => {
+    setInput(event.target.value);
   };
 
   const onButtonSubmit = () => {
@@ -72,7 +72,6 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-
   return (
     <main className="routes-main">
       <Routes>
@@ -85,12 +84,22 @@ function App() {
         <Route
           path="/login"
           element={
-            user.loggedIn ? <Navigate to="/" /> : <Login setUser={setUser} />
+            user.loggedIn ? (
+              <Navigate to="/home" />
+            ) : (
+              <Login setUser={setUser} />
+            )
           }
         />
         <Route
           path="/register"
-          element={user.loggedIn ? <Navigate to="/home" /> : <Register  setUser={setUser} />}
+          element={
+            user.loggedIn ? (
+              <Navigate to="/home" />
+            ) : (
+              <Register setUser={setUser} />
+            )
+          }
         />
         <Route
           path="/home"
@@ -111,10 +120,10 @@ function App() {
             )
           }
         />
+        <Route />
       </Routes>
     </main>
-  )
+  );
 }
-
 
 export default App;
