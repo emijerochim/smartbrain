@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import apiUrl from "../apiUrl";
 
 const Register = ({ setUser }) => {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onNameChange = (event) => {
-    setName(event.target.value);
+  const onUsernameChange = (event) => {
+    setUsername(event.target.value);
   };
   const onEmailChange = (event) => {
     setEmail(event.target.value);
@@ -25,7 +25,7 @@ const Register = ({ setUser }) => {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        name: name,
+        username: username,
         email: email,
         password: password,
       }),
@@ -45,15 +45,15 @@ const Register = ({ setUser }) => {
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
             <legend className="f1 fw6 ph0 mh0">Register</legend>
             <div className="mt3">
-              <label className="db fw6 lh-copy f6" htmlFor="name">
-                Name
+              <label className="db fw6 lh-copy f6" htmlFor="username">
+                username
               </label>
               <input
-                onChange={onNameChange}
+                onChange={onUsernameChange}
                 className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="text"
-                name="name"
-                id="name"
+                username="username"
+                id="username"
               />
             </div>
 
@@ -65,7 +65,7 @@ const Register = ({ setUser }) => {
                 onChange={onEmailChange}
                 className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="email"
-                name="email-address"
+                username="email-address"
                 id="email-address"
               />
             </div>
@@ -78,7 +78,7 @@ const Register = ({ setUser }) => {
                 onChange={onPasswordChange}
                 className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="password"
-                name="password"
+                username="password"
                 id="password"
               />
             </div>

@@ -7,16 +7,19 @@ const Login = ({ setUser }) => {
   const [password, setPassword] = useState("");
 
   const onEmailChange = (event) => {
-    setEmail({ email: event.target.value });
+    setEmail(event.target.value);
   };
   const onPasswordChange = (event) => {
-    setPassword({ password: event.target.value });
+    setPassword(event.target.value);
   };
 
   const onSubmitLogin = () => {
-    fetch(`https://www.${apiUrl}/login`, {
+    fetch(`${apiUrl}/login`, {
       method: "post",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({
         email: email,
         password: password,
@@ -24,8 +27,9 @@ const Login = ({ setUser }) => {
     })
       .then((res) => res.json())
       .then((user) => {
-        if (user.id) {
-          setUser({ user });
+        if (user) {
+          //set user and its loggedIn property to true
+          setUser({ user, loggedIn: true });
         }
       });
   };

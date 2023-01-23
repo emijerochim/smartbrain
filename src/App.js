@@ -62,10 +62,7 @@ function App() {
             }),
           })
             .then((res) => res.json())
-            .then((count) => {
-              setUser({ ...user, entries: count });
-            })
-            .catch(console.log);
+            .catch((err) => console.log(err));
         }
         displayFaceBox(calculateFaceLocation(res));
       })
