@@ -18,7 +18,7 @@ const Register = ({ setUser }) => {
   };
 
   const onSubmitRegister = () => {
-    fetch(`https://www.${apiUrl}/register`, {
+    fetch(`${apiUrl}/register`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
