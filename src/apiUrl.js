@@ -1,3 +1,3 @@
-const apiUrl = "https://smartbrain-api-production-4344.up.railway.app:3000";
+const apiUrl = "https://smartbrain-api-production-4344.up.railway.app";
 
 export default apiUrl;
