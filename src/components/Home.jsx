@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import FaceRecognition from "./FaceRecognition";
 import ImageLinkForm from "./ImageLinkForm";
 import NavBar from "./NavBar";
+import apiUrl from "../apiUrl";
 
 function Home({ user, setUser }) {
   const [input, setInput] = useState("");
