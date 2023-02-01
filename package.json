@@ -27,12 +27,18 @@
     ]
   },
   "dependencies": {
+    "@svgr/plugin-svgo": "^6.5.1",
+    "@svgr/webpack": "^6.5.1",
+    "bcrypt": "^5.1.0",
     "clarifai": "^2.9.1",
+    "css-select": "^3.1.0",
+    "nth-check": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "^5.0.1",
     "react-tsparticles": "^2.3.3",
+    "svgo": "^3.0.2",
     "tachyons": "^4.12.0"
   }
 }

@@ -1,8 +1,13 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import Logo from "./Logo";
+import Logo from "../styles/brain.png";
 
-function Navigation({ user }) {
+function NavBar({ user, setUser }) {
+  const onSignOut = () => {
+    localStorage.removeItem("token");
+    setUser({});
+  };
+
   return (
     <nav className="nav">
       <ul className="nav__list">
@@ -18,9 +23,9 @@ function Navigation({ user }) {
               <p>Hi {user.username}, </p>
             </li>
             <li className="nav__item">
-              <Navigate to="/signout" className="nav_link">
+              <button className="nav_link" onClick={onSignOut}>
                 Sign Out
-              </Navigate>
+              </button>
             </li>
           </ul>
           :
@@ -42,4 +47,4 @@ function Navigation({ user }) {
   );
 }
 
-export default Navigation;
+export default NavBar;
