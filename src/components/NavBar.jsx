@@ -17,10 +17,9 @@ function NavBar({ user, setUser }) {
           </Navigate>
         </li>
         <li className="nav__item">
-          user.loggedIn ?
           <ul className="nav__item logged_nav">
             <li className="nav__item">
-              <p>Hi {user.username}, </p>
+              <p>Hi {user ? user.username : ""}, </p>
             </li>
             <li className="nav__item">
               <button className="nav_link" onClick={onSignOut}>
