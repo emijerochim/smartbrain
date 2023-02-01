@@ -4,7 +4,6 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import apiUrl from "./apiUrl";
-import bcrypt from "bcryptjs";
 import "./App.css";
 
 function App() {
@@ -17,17 +16,6 @@ function App() {
   });
 
   const loadUser = (data) => {
-    setUser({
-      id: data.user.id,
-      username: data.user.name,
-      email: data.user.email,
-      password: data.user.password,
-      loggedIn: true,
-    });
-    localStorage.setItem("token", data.token);
-  };
-
-  useEffect(() => {
     let token = window.localStorage.getItem("token");
     if (token) {
       fetch(`${apiUrl}/login`, {
@@ -39,12 +27,24 @@ function App() {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           if (data.user.id) {
-            loadUser(data);
+            setUser({
+              id: data.user.id,
+              username: data.user.name,
+              email: data.user.email,
+              password: data.user.password,
+              loggedIn: true,
+            });
+            localStorage.setItem("token", data.token);
           }
         })
         .catch((err) => console.log(err));
     }
+  };
+
+  useEffect(() => {
+    loadUser();
   }, []);
 
   return (

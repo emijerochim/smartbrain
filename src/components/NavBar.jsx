@@ -13,7 +13,7 @@ function NavBar({ user, setUser }) {
       <ul className="nav__list">
         <li className="nav__item">
           <Navigate to="/" className="nav_link">
-            <Logo />
+            <img src={Logo} alt="logo" className="logo" />
           </Navigate>
         </li>
         <li className="nav__item">
