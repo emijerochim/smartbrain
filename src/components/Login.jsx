@@ -33,7 +33,7 @@ const Login = ({ user, setUser }) => {
       .then((user) => {
         if (user.id) {
           //set user and its loggedIn property to true
-          setUser({ user, loggedIn: true });
+          setUser(user);
           localStorage.setItem("user", JSON.stringify(user));
         }
       })
