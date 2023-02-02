@@ -1,10 +1,12 @@
 import React from "react";
 import "../styles/ImageLinkForm.scss";
 import "../styles/tachyons.scss";
+import NavBar from "./NavBar";
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div>
+      <NavBar setUser={setUser} />
       <p className="f3">
         {
           "This Magic Brain 🧠 will detect faces in your pictures. Give it a try!"

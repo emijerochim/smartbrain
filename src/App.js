@@ -28,7 +28,7 @@ function App() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          if (data.user.id) {
+          if (data.user) {
             setUser({
               id: data.user.id,
               username: data.user.name,
