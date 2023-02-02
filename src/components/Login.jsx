@@ -30,11 +30,11 @@ const Login = ({ user, setUser }) => {
       }),
     })
       .then((res) => res.json())
-      .then((user) => {
-        if (user.id) {
+      .then((data) => {
+        if (data.user) {
           //set user and its loggedIn property to true
-          setUser(user);
-          localStorage.setItem("user", JSON.stringify(user));
+          setUser(data.user);
+          localStorage.setItem("user", JSON.stringify(data.token));
         }
       })
       .catch((err) => console.log(err));
