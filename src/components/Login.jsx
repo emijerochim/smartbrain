@@ -26,16 +26,19 @@ const Login = ({ user, setUser }) => {
       body: JSON.stringify({
         email: email,
         password: password,
-        token: localStorage.getItem("token"),
       }),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.user) {
-          setUser(data.user);
-          console.log(user);
-          setUser({ ...user, loggedIn: true });
-          console.log(user);
+          setUser({
+            id: data.user.id,
+            username: data.user.name,
+            email: data.user.email,
+            password: data.user.password,
+            loggedIn: true,
+          });
+          localStorage.setItem("user", JSON.stringify(data.user));
         }
         if (data.token) {
           localStorage.setItem("token", JSON.stringify(data.token));
