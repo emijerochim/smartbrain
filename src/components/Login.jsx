@@ -5,7 +5,7 @@ import apiUrl from "../apiUrl";
 import "../styles/login.scss";
 import "../styles/tachyons.scss";
 
-const Login = ({ setUser }) => {
+const Login = ({ user, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -42,7 +42,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} setUser={setUser} />
       <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
         <main className="pa4 black-80">
           <div className="measure">

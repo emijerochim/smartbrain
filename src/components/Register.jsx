@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import apiUrl from "../apiUrl";
 import NavBar from "./NavBar";
 
-const Register = ({ setUser }) => {
+const Register = ({ user, setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,7 +41,7 @@ const Register = ({ setUser }) => {
 
   return (
     <div>
-      <NavBar setUser={setUser} />
+      <NavBar user={user} setUser={setUser} />
       <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
         <main className="pa4 black-80">
           <div className="measure">

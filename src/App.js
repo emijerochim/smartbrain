@@ -62,7 +62,7 @@ function App() {
             user.loggedIn ? (
               <Navigate to="/home" />
             ) : (
-              <Login setUser={setUser} />
+              <Login user={user} setUser={setUser} />
             )
           }
         />
@@ -72,7 +72,7 @@ function App() {
             user.loggedIn ? (
               <Navigate to="/home" />
             ) : (
-              <Register setUser={setUser} />
+              <Register user={user} setUser={setUser} />
             )
           }
         />
