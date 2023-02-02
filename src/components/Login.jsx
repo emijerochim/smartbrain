@@ -33,7 +33,7 @@ const Login = ({ user, setUser }) => {
       .then((data) => {
         if (data.user) {
           setUser(data.user);
-          localStorage.setItem("user", JSON.stringify(data.token));
+          localStorage.setItem("token", JSON.stringify(data.token));
         }
       })
       .catch((err) => console.log(err));
