@@ -12,9 +12,7 @@ function NavBar({ user, setUser }) {
     <nav className="nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <Navigate to="/" className="nav_link">
-            <img src={Logo} alt="logo" className="logo" />
-          </Navigate>
+          <img src={Logo} alt="logo" className="logo" />
         </li>
         <li className="nav__item">
           <ul className="nav__item logged_nav">
@@ -29,16 +27,8 @@ function NavBar({ user, setUser }) {
           </ul>
           :
           <ul className="nav__item logged_nav">
-            <li className="nav__item">
-              <Navigate to="/login" className="nav_link">
-                Login
-              </Navigate>
-            </li>
-            <li className="nav__item">
-              <Navigate to="/register" className="nav_link">
-                Register
-              </Navigate>
-            </li>
+            <li className="nav__item">Login</li>
+            <li className="nav__item">Register</li>
           </ul>
         </li>
       </ul>

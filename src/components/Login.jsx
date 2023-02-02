@@ -26,7 +26,6 @@ const Login = ({ setUser }) => {
       body: JSON.stringify({
         email: email,
         password: password,
-        token: localStorage.getItem("token"),
       }),
     })
       .then((res) => res.json())
