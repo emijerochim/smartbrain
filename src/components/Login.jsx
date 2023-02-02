@@ -33,7 +33,11 @@ const Login = ({ user, setUser }) => {
       .then((data) => {
         if (data.user) {
           setUser(data.user);
+          console.log(user);
           setUser({ ...user, loggedIn: true });
+          console.log(user);
+        }
+        if (data.token) {
           localStorage.setItem("token", JSON.stringify(data.token));
         }
       })
