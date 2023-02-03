@@ -6,14 +6,11 @@ import "../styles/login.scss";
 import "../styles/tachyons.scss";
 
 const Login = ({ user, setUser }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const onEmailChange = (event) => {
-    setEmail(event.target.value);
+    setUser({ ...user, email: event.target.value });
   };
   const onPasswordChange = (event) => {
-    setPassword(event.target.value);
+    setUser({ ...user, password: event.target.value });
   };
 
   const onSubmitLogin = () => {
