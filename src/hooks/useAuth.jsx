@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import apiUrl from "../apiUrl";
 
-export function useAuth({ user, setUser }) {
+export function useAuth(user, setUser) {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
