@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "../styles/brain.png";
 
 function NavBar({ user, setUser }) {
@@ -17,7 +16,7 @@ function NavBar({ user, setUser }) {
         <div>
           <div>
             <div>
-              <p>{user ? `Hi ${user.username}` : ""}, </p>
+              <p>{user.loggedIn ? `Hi ${user.username}` : ""} </p>
             </div>
             <div>
               <button onClick={onSignOut}>Sign Out</button>
