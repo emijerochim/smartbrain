@@ -4,7 +4,13 @@ import Logo from "../styles/brain.png";
 function NavBar({ user, setUser }) {
   const onSignOut = () => {
     localStorage.removeItem("token");
-    setUser({});
+    setUser({
+      id: "",
+      username: "",
+      email: "",
+      password: "",
+      loggedIn: false,
+    });
   };
 
   return (
