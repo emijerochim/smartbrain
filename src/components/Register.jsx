@@ -29,7 +29,7 @@ const Register = ({ user, setUser }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.user.id) {
+        if (data.user) {
           setUser({
             id: data.user.id,
             username: data.user.username,
