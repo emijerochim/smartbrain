@@ -21,8 +21,8 @@ const Login = ({ user, setUser }) => {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        email: email,
-        password: password,
+        email: user.email,
+        password: user.password,
       }),
     })
       .then((res) => res.json())
