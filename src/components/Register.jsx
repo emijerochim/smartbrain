@@ -28,9 +28,15 @@ const Register = ({ user, setUser }) => {
       }),
     })
       .then((res) => res.json())
-      .then((user) => {
-        if (user.id) {
-          setUser({ user });
+      .then((data) => {
+        if (data.user.id) {
+          setUser({
+            id: data.user.id,
+            username: data.user.username,
+            email: data.user.email,
+            password: data.user.password,
+            loggedIn: true,
+          });
         }
       });
   };
