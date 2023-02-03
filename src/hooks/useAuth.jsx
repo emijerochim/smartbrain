@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import apiUrl from "../apiUrl";
 
 export function useAuth({ user, setUser }) {
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
-    let user = window.localStorage.getItem("user");
-    if (user) {
+    if (token) {
       fetch(`${apiUrl}/login`, {
         method: "post",
         headers: {
