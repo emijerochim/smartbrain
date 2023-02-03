@@ -10,28 +10,27 @@ function NavBar({ user, setUser }) {
 
   return (
     <nav className="nav">
-      <ul className="nav__list">
-        <li className="nav__item">
+      <div className="nav__divst">
+        <div className="nav__item">
           <img src={Logo} alt="logo" className="logo" />
-        </li>
-        <li className="nav__item">
-          <ul className="nav__item logged_nav">
-            <li className="nav__item">
-              <p>Hi {user ? user.username : ""}, </p>
-            </li>
-            <li className="nav__item">
-              <button className="nav_link" onClick={onSignOut}>
+        </div>
+        <div className="nav__item">
+          <div className="nav__item logged_nav">
+            <div className="nav__item">
+              <p>{user ? `Hi ${user.username}` : ""}, </p>
+            </div>
+            <div className="nav__item">
+              <button className="nav_divnk" onCdivck={onSignOut}>
                 Sign Out
               </button>
-            </li>
-          </ul>
-          :
-          <ul className="nav__item logged_nav">
-            <li className="nav__item">Login</li>
-            <li className="nav__item">Register</li>
-          </ul>
-        </li>
-      </ul>
+            </div>
+          </div>
+          <div className="nav__item logged_nav">
+            <div className="nav__item">Login</div>
+            <div className="nav__item">Register</div>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }
