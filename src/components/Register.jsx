@@ -4,18 +4,14 @@ import apiUrl from "../apiUrl";
 import NavBar from "./NavBar";
 
 const Register = ({ user, setUser }) => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const onUsernameChange = (event) => {
-    setUsername(event.target.value);
+    setUser({ ...user, username: event.target.value });
   };
   const onEmailChange = (event) => {
-    setEmail(event.target.value);
+    setUser({ ...user, email: event.target.value });
   };
   const onPasswordChange = (event) => {
-    setPassword(event.target.value);
+    setUser({ ...user, password: event.target.value });
   };
 
   const onSubmitRegister = () => {
@@ -26,9 +22,9 @@ const Register = ({ user, setUser }) => {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        username: username,
-        email: email,
-        password: password,
+        username: user.username,
+        email: user.email,
+        password: user.password,
       }),
     })
       .then((res) => res.json())
