@@ -29,7 +29,7 @@ const Login = ({ user, setUser }) => {
         if (data.user) {
           setUser({
             id: data.user.id,
-            username: data.user.name,
+            username: data.user.username,
             email: data.user.email,
             password: data.user.password,
             loggedIn: true,
