@@ -27,7 +27,7 @@ export function checkLoginToken(user, setUser) {
               password: data.user.password,
               loggedIn: true,
             });
-            localStorage.setItem("user", JSON.stringify(data.user));
+            localStorage.setItem("user", data.user);
           }
         })
         .catch((err) => console.log(err));
