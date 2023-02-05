@@ -37,6 +37,13 @@ const Register = ({ user, setUser }) => {
             password: data.user.password,
             loggedIn: true,
           });
+          localStorage.setItem("user", JSON.stringify(data.user));
+        }
+        if (data.token) {
+          localStorage.setItem(
+            "token",
+            JSON.stringify(data.token.split(" ")[1])
+          );
         }
       });
   };

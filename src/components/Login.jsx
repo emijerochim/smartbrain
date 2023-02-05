@@ -37,7 +37,10 @@ const Login = ({ user, setUser }) => {
           localStorage.setItem("user", JSON.stringify(data.user));
         }
         if (data.token) {
-          localStorage.setItem("token", JSON.stringify(data.token));
+          localStorage.setItem(
+            "token",
+            JSON.stringify(data.token.split(" ")[1])
+          );
         }
       })
       .catch((err) => console.log(err));
