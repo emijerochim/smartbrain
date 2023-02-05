@@ -5,7 +5,7 @@ export function checkLoginToken(user, setUser) {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (user.email && token) {
+    if (token) {
       fetch(`${apiUrl}/verify-token`, {
         method: "post",
         headers: {

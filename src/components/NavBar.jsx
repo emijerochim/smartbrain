@@ -5,10 +5,6 @@ function NavBar({ user, setUser }) {
   const onSignOut = () => {
     localStorage.removeItem("token");
     setUser({
-      id: "",
-      username: "",
-      email: "",
-      password: "",
       loggedIn: false,
     });
   };
