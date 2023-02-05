@@ -9,12 +9,12 @@ function Home({ user, setUser }) {
   const [imageUrl, setImageUrl] = useState("");
   const [box, setBox] = useState({});
 
-  const fetchBox = (imageUrl) => {
+  const fetchBox = (input) => {
     fetch(`${apiUrl}/image`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        input: imageUrl,
+        input: input,
         token: localStorage.getItem("token"),
       }),
     })

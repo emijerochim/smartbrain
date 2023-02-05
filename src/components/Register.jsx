@@ -40,10 +40,7 @@ const Register = ({ user, setUser }) => {
           localStorage.setItem("user", JSON.stringify(data.user));
         }
         if (data.token) {
-          localStorage.setItem(
-            "token",
-            JSON.stringify(data.token.split(" ")[1])
-          );
+          localStorage.setItem("token", JSON.stringify(data.token));
         }
       });
   };
