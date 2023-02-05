@@ -11,6 +11,7 @@ export function checkLoginToken(user, setUser) {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           email: user.email,
