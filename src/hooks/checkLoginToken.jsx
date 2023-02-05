@@ -14,8 +14,7 @@ export function checkLoginToken(user, setUser) {
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          email: user.email,
-          password: user.password,
+          token: token,
         }),
       })
         .then((res) => res.json())
