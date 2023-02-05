@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import apiUrl from "../apiUrl";
-import "../styles/login.scss";
-import "../styles/tachyons.scss";
+import "../styles/Login.scss";
 
 const Login = ({ user, setUser }) => {
   const onEmailChange = (event) => {

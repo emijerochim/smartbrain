@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/FaceRecognition.scss";
 import "../styles/tachyons.scss";
 
 const FaceRecognition = ({ imageUrl, box }) => {
   return (
-    <div className="center ma">
-      <div className="absolute mt2">
+    <div className="">
+      <div className="">
         <img
           id="input-image"
           src={imageUrl}

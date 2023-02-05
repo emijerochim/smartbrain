@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FaceRecognition from "./FaceRecognition";
-import ImageLinkForm from "./ImageLinkForm";
+import InputForm from "./InputForm";
 import NavBar from "./NavBar";
 import apiUrl from "../apiUrl";
 
@@ -9,7 +9,25 @@ function Home({ user, setUser }) {
   const [imageUrl, setImageUrl] = useState("");
   const [box, setBox] = useState({});
 
-  const calculateFaceLocation = (data) => {
+  const fetchBox = (imageUrl) => {
+    fetch(`${apiUrl}/image`, {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: imageUrl,
+        token: localStorage.getItem("token"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res) {
+          setBox(calculateBoundingBox({ res }));
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const calculateBoundingBox = (data) => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById("input-image");
@@ -23,45 +41,27 @@ function Home({ user, setUser }) {
     };
   };
 
-  const displayFaceBox = (box) => {
-    setBox({ box });
-  };
-
   const onInputChange = (event) => {
     setInput(event.target.value);
   };
 
   const onButtonSubmit = () => {
     setImageUrl(input);
-
-    fetch(`${apiUrl}/image`, {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        input: input,
-        token: localStorage.getItem("token"),
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        displayFaceBox(calculateFaceLocation(res));
-      })
-      .catch((err) => console.log(err));
+    fetchBox(imageUrl);
   };
 
   return (
     <main className="home_main">
       <NavBar user={user} setUser={setUser} />
-      <ImageLinkForm
+      <InputForm
         onInputChange={onInputChange}
         onButtonSubmit={onButtonSubmit}
       />
-      <FaceRecognition
-        imageUrl={imageUrl}
-        box={box}
-        setBox={setBox}
-        setImageUrl={setImageUrl}
-      />
+      {imageUrl ? (
+        <FaceRecognition imageUrl={imageUrl} box={box} setBox={setBox} />
+      ) : (
+        <div></div>
+      )}
     </main>
   );
 }
