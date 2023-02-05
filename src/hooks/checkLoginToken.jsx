@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import apiUrl from "../apiUrl";
 
-export function useAuth(user, setUser) {
+export function checkLoginToken(user, setUser) {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
     if (user.email && token) {
-      fetch(`${apiUrl}/login`, {
+      fetch(`${apiUrl}/verify-token`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -29,13 +29,10 @@ export function useAuth(user, setUser) {
             });
             localStorage.setItem("user", JSON.stringify(data.user));
           }
-          if (data.token) {
-            localStorage.setItem("token", JSON.stringify(data.token));
-          }
         })
         .catch((err) => console.log(err));
     }
   }, []);
 }
 
-export default useAuth;
+export default checkLoginToken;

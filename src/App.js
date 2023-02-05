@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import useAuth from "./hooks/useAuth";
+import checkLoginToken from "./hooks/checkLoginToken";
 import "./App.css";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     loggedIn: false,
   });
 
-  useAuth(user, setUser);
+  checkLoginToken(user, setUser);
 
   return (
     <main className="routes-main">

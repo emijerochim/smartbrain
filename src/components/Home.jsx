@@ -12,7 +12,10 @@ function Home({ user, setUser }) {
   const fetchBox = async (input) => {
     fetch(`${apiUrl}/image`, {
       method: "post",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({
         input: input,
         token: localStorage.getItem("token"),
