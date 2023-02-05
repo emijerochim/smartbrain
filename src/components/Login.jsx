@@ -34,10 +34,10 @@ const Login = ({ user, setUser }) => {
             password: data.user.password,
             loggedIn: true,
           });
-          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("user", data.user);
         }
         if (data.token) {
-          localStorage.setItem("token", JSON.stringify(data.token));
+          localStorage.setItem("token", data.token);
         }
       })
       .catch((err) => console.log(err));

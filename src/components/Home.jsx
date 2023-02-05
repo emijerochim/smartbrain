@@ -9,7 +9,7 @@ function Home({ user, setUser }) {
   const [imageUrl, setImageUrl] = useState("");
   const [box, setBox] = useState({});
 
-  const fetchBox = (input) => {
+  const fetchBox = async (input) => {
     fetch(`${apiUrl}/image`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -27,7 +27,7 @@ function Home({ user, setUser }) {
       .catch((err) => console.log(err));
   };
 
-  const calculateBoundingBox = (data) => {
+  const calculateBoundingBox = async (data) => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById("input-image");
@@ -41,13 +41,13 @@ function Home({ user, setUser }) {
     };
   };
 
-  const onInputChange = (event) => {
+  const onInputChange = async (event) => {
     setInput(event.target.value);
   };
 
-  const onButtonSubmit = () => {
+  const onButtonSubmit = async () => {
     setImageUrl(input);
-    fetchBox(imageUrl);
+    await fetchBox(input);
   };
 
   return (

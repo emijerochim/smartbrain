@@ -5,7 +5,7 @@ export function useAuth(user, setUser) {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (token) {
+    if (user.email && token) {
       fetch(`${apiUrl}/login`, {
         method: "post",
         headers: {
