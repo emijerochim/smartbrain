@@ -7,14 +7,9 @@ import apiUrl from "../apiUrl";
 function Home({ user, setUser }) {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [box, setBox] = useState({
-    leftCol: 0,
-    topRow: 0,
-    rightCol: 0,
-    bottomRow: 0,
-  });
+  const [boxes, setBoxes] = useState([]);
 
-  const fetchBox = async (input) => {
+  const fetchBoxes = async (input) => {
     await fetch(`${apiUrl}/image`, {
       method: "post",
       headers: {
@@ -30,25 +25,27 @@ function Home({ user, setUser }) {
       .then((res) => res.json())
       .then((res) => {
         if (res) {
-          calculateBoundingBox(res);
+          calculateBoundingBoxes(res);
         }
       })
       .catch((err) => console.log(err));
   };
 
-  const calculateBoundingBox = async (data) => {
-    const box = await data.outputs[0].data.regions[0].region_info.bounding_box;
+  const calculateBoundingBoxes = async (data) => {
+    const boxes = data.outputs[0].data.regions;
     const image = document.getElementById("input-image");
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log("box: ", box);
-    console.log("width: ", width, "height: ", height);
-    setBox({
-      leftCol: box.left_col * width,
-      topRow: box.top_row * height,
-      rightCol: width - box.right_col * width,
-      bottomRow: height - box.bottom_row * height,
+    const boundingBoxes = boxes.map((box) => {
+      const boundingBox = box.region_info.bounding_box;
+      return {
+        leftCol: boundingBox.left_col * width,
+        topRow: boundingBox.top_row * height,
+        rightCol: width - boundingBox.right_col * width,
+        bottomRow: height - boundingBox.bottom_row * height,
+      };
     });
+    setBoxes(boundingBoxes);
   };
 
   const onInputChange = (event) => {
@@ -57,7 +54,7 @@ function Home({ user, setUser }) {
 
   const onButtonSubmit = async () => {
     setImageUrl(input);
-    await fetchBox(input);
+    await fetchBoxes(input);
   };
 
   return (
@@ -67,11 +64,7 @@ function Home({ user, setUser }) {
         onInputChange={onInputChange}
         onButtonSubmit={onButtonSubmit}
       />
-      {imageUrl ? (
-        <FaceRecognition imageUrl={imageUrl} box={box} setBox={setBox} />
-      ) : (
-        <div></div>
-      )}
+      <FaceRecognition imageUrl={imageUrl} boxes={boxes} />
     </main>
   );
 }
