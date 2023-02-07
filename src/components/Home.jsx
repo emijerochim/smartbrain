@@ -7,10 +7,15 @@ import apiUrl from "../apiUrl";
 function Home({ user, setUser }) {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [box, setBox] = useState({});
+  const [box, setBox] = useState({
+    leftCol: 0,
+    topRow: 0,
+    rightCol: 0,
+    bottomRow: 0,
+  });
 
   const fetchBox = async (input) => {
-    fetch(`${apiUrl}/image`, {
+    await fetch(`${apiUrl}/image`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -25,27 +30,28 @@ function Home({ user, setUser }) {
       .then((res) => res.json())
       .then((res) => {
         if (res) {
-          setBox(calculateBoundingBox({ res }));
+          calculateBoundingBox(res);
         }
       })
       .catch((err) => console.log(err));
   };
 
   const calculateBoundingBox = async (data) => {
-    const clarifaiFace =
-      data.outputs[0].data.regions[0].region_info.bounding_box;
+    const box = await data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById("input-image");
     const width = Number(image.width);
     const height = Number(image.height);
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - clarifaiFace.right_col * width,
-      bottomRow: height - clarifaiFace.bottom_row * height,
-    };
+    console.log("box: ", box);
+    console.log("width: ", width, "height: ", height);
+    setBox({
+      leftCol: box.left_col * width,
+      topRow: box.top_row * height,
+      rightCol: width - box.right_col * width,
+      bottomRow: height - box.bottom_row * height,
+    });
   };
 
-  const onInputChange = async (event) => {
+  const onInputChange = (event) => {
     setInput(event.target.value);
   };
 

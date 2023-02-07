@@ -4,13 +4,11 @@ import "../styles/tachyons.scss";
 
 const InputForm = ({ onInputChange, onButtonSubmit }) => {
   return (
-    <div className="">
-      <div className="">
-        <input onChange={onInputChange} type="text" className="" />
-        <button onClick={onButtonSubmit} className="">
-          Detect
-        </button>
-      </div>
+    <div className="text-input-container">
+      <input onChange={onInputChange} type="text" className="text-input" />
+      <button onClick={onButtonSubmit} className="text-button">
+        Detect URL
+      </button>
     </div>
   );
 };
