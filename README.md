@@ -28,4 +28,4 @@ ________________
 * [github.com/emijerochim/smartbrain-api](http://github.com/emijerochim/smartbrain-api)
 
 ### Demo:
-* [emijerochim.com/smartbrain](http://emijerochim.com/smartbrain)
+* [smartbrain app](http://smartbrain-production.up.railway.app)
