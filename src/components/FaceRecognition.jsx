@@ -4,12 +4,16 @@ import "../styles/FaceRecognition.scss";
 const FaceRecognition = ({ imageUrl, boxes }) => {
   return (
     <div className="face-recognition">
-      <img
-        id="input-image"
-        src={imageUrl}
-        height="auto"
-        className="input-image"
-      />
+      {boxes ? (
+        <img
+          id="input-image"
+          src={imageUrl}
+          height="auto"
+          className="input-image"
+        />
+      ) : (
+        ""
+      )}
       {boxes.map((box, index) => {
         return (
           <div
