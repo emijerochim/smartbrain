@@ -8,6 +8,7 @@ import "../styles/Home.scss";
 function Home({ user, setUser }) {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [urlIsValid, setUrlIsValid] = useState(false);
   const [boxes, setBoxes] = useState([]);
 
   const fetchBoxes = async (input) => {
@@ -33,20 +34,25 @@ function Home({ user, setUser }) {
   };
 
   const calculateBoundingBoxes = async (data) => {
-    const boxes = data.outputs[0].data.regions;
-    const image = document.getElementById("input-image");
-    const width = Number(image.width);
-    const height = Number(image.height);
-    const boundingBoxes = boxes.map((box) => {
-      const boundingBox = box.region_info.bounding_box;
-      return {
-        leftCol: boundingBox.left_col * width,
-        topRow: boundingBox.top_row * height,
-        rightCol: width - boundingBox.right_col * width,
-        bottomRow: height - boundingBox.bottom_row * height,
-      };
-    });
-    setBoxes(boundingBoxes);
+    if (data.outputs !== undefined) {
+      const boxes = data.outputs[0].data.regions;
+      const image = document.getElementById("input-image");
+      if (image === null) {
+        return;
+      }
+      const width = Number(image.width);
+      const height = Number(image.height);
+      const boundingBoxes = boxes.map((box) => {
+        const boundingBox = box.region_info.bounding_box;
+        return {
+          leftCol: boundingBox.left_col * width,
+          topRow: boundingBox.top_row * height,
+          rightCol: width - boundingBox.right_col * width,
+          bottomRow: height - boundingBox.bottom_row * height,
+        };
+      });
+      setBoxes(boundingBoxes);
+    }
   };
 
   const onInputChange = (event) => {
@@ -54,6 +60,9 @@ function Home({ user, setUser }) {
   };
 
   const onButtonSubmit = async () => {
+    if (input === "" || input === undefined) {
+      return;
+    }
     setImageUrl(input);
     await fetchBoxes(input);
   };
