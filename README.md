@@ -1,23 +1,37 @@
-## 🧠 SmartBrain
+## 🧠 smartbrain
 
-It auths the login and asks the user for a picture, sends it to the Clarifai API and uses the response data to draw a face detection box on top of it.
+This is a frontend app built using React in which a user can paste a image URL and the app will detect the faces on it.
 
-_________________________
+## Stack
 
-### 📱 Frontend
+### 📱 [Frontend](http://github.com/emijerochim/smartbrain)
 * HTML5, CSS3, SASS, React.js
 
-### 🖥️ Backend
-* Node.js, Express, Bcrypt, Knex
+### 🖥️ [Backend](http://github.com/emijerochim/smartbrain-api)
+* Node.js, Express, JWT Authentication, pg
 
 ### 💾 Database
 * PostgreSQL
 
-### 🧰 Tools
-* Git, VS Code, Nodemon, Trello
+## Features 🚀
 
-### 📚 Libraries
-* Clarifai, Tachyons
+The app has the following features:
+
+- User registration and login through JWT Authentication
+- Image URL submission and face detection through the backend RESTful API
+- Display of the bounding box around the detected face on the image
+
+## Running the Code ▶️
+
+1. Clone the repository using `git clone https://github.com/emijerochim/smartbrain.git`.
+2. Enter the project directory using `cd smartbrain`.
+3. Install the required packages by running `npm install`.
+4. Start the development server with `npm start`.
+
+
+## Contact
+* 💼  You can see my portfolio at <a href="https://emijerochim.com/">emijerochim.com</a>
+* ✉️  Mail me at <a href="mailto:dev@emijerochim.com/">dev@emijerochim.com</a></p>
 
 ________________
 
@@ -27,5 +41,4 @@ ________________
 ### Backend code:
 * [github.com/emijerochim/smartbrain-api](http://github.com/emijerochim/smartbrain-api)
 
-### Demo:
-* [smartbrain app](http://smartbrain-production.up.railway.app)
+### [🧠 Try the demo](http://smartbrain-production.up.railway.app)
