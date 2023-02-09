@@ -24,9 +24,9 @@ function Home({ user, setUser }) {
       }),
     })
       .then((res) => res.json())
-      .then((res) => {
-        if (res) {
-          calculateBoundingBoxes(res);
+      .then((data) => {
+        if (data) {
+          calculateBoundingBoxes(data);
         }
       })
       .catch((err) => console.log(err));
