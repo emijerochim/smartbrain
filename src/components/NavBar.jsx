@@ -18,9 +18,7 @@ const NavBar = ({ user, setUser }) => {
         </div>
         <div className="navbar-username">
           {user.loggedIn ? (
-            <p className="username-text">
-              Hi {user.username}👋 paste your URL and detect faces 🧠
-            </p>
+            <p className="username-text">👋 user: {user.username}</p>
           ) : (
             <></>
           )}
