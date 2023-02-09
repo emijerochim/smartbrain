@@ -26,8 +26,7 @@
     "react-scripts": "^5.0.1",
     "react-tsparticles": "^2.3.3",
     "sass": "^1.58.0",
-    "svgo": "^3.0.2",
-    "tachyons": "^4.12.0"
+    "svgo": "^3.0.2"
   },
   "browserslist": {
     "production": [

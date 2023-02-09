@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/InputForm.scss";
-import "../styles/tachyons.scss";
 
 const InputForm = ({ onInputChange, onButtonSubmit }) => {
   return (

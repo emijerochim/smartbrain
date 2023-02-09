@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import apiUrl from "../apiUrl";
 import NavBar from "./NavBar";
+import "../styles/UserForm.scss";
 
 const Register = ({ user, setUser }) => {
   const onUsernameChange = (event) => {
@@ -46,66 +47,66 @@ const Register = ({ user, setUser }) => {
   };
 
   return (
-    <div>
+    <div className="register">
       <NavBar user={user} setUser={setUser} />
-      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-        <main className="pa4 black-80">
-          <div className="measure">
-            <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Register</legend>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="username">
-                  username
+      <article className="main-content">
+        <main className="form-container">
+          <div className="form-content">
+            <fieldset id="sign_up" className="form-fieldset">
+              <legend className="form-legend">Register</legend>
+              <div className="form-group">
+                <label className="form-label" htmlFor="username">
+                  Username
                 </label>
                 <input
                   onChange={onUsernameChange}
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="form-input"
                   type="text"
                   username="username"
                   id="username"
                 />
               </div>
 
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="email-address">
+              <div className="form-group">
+                <label className="form-label" htmlFor="email-address">
                   Email
                 </label>
                 <input
                   onChange={onEmailChange}
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="form-input"
                   type="email"
                   username="email-address"
                   id="email-address"
                 />
               </div>
 
-              <div className="mv3">
-                <label className="db fw6 lh-copy f6" htmlFor="password">
-                  Password
-                </label>
+              <div className="form-group">
+                <label className="form-label">Password</label>
                 <input
                   onChange={onPasswordChange}
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  className="form-input"
                   type="password"
                   username="password"
                   id="password"
                 />
               </div>
             </fieldset>
-            <div>
-              <input
+            <div className="form-button-container">
+              <button
                 onClick={onSubmitRegister}
-                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib pointer"
+                className="form-submit-button"
                 type="submit"
                 value="Register"
-              />
+              >
+                Submit
+              </button>
             </div>
-          </div>
 
-          <div className="login-link-container">
-            <Link to="/login" className="login-link">
-              Log in
-            </Link>
+            <div className="link-container">
+              <Link to="/login" className="link">
+                Log In
+              </Link>
+            </div>
           </div>
         </main>
       </article>

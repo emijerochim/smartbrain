@@ -1,7 +1,8 @@
 import React from "react";
 import Logo from "../styles/brain.png";
+import "../styles/NavBar.scss";
 
-function NavBar({ user, setUser }) {
+const NavBar = ({ user, setUser }) => {
   const onSignOut = () => {
     localStorage.removeItem("token");
     setUser({
@@ -10,24 +11,32 @@ function NavBar({ user, setUser }) {
   };
 
   return (
-    <nav>
-      <div>
-        <div>
-          <img src={Logo} alt="logo" />
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-logo">
+          <img src={Logo} alt="logo" className="logo" />
         </div>
-        <div>
-          <div>
-            <div>
-              <p>{user.loggedIn ? `Hi ${user.username}` : ""} </p>
-            </div>
-            <div>
-              <button onClick={onSignOut}>Sign Out</button>
-            </div>
-          </div>
+        <div className="navbar-username">
+          {user.loggedIn ? (
+            <p className="username-text">
+              Hi {user.username}👋 paste your URL and detect faces 🧠
+            </p>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="navbar-sign-out">
+          {user.loggedIn ? (
+            <button onClick={onSignOut} className="sign-out-button">
+              Sign Out
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </nav>
   );
-}
+};
 
 export default NavBar;

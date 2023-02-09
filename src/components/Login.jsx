@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "./NavBar";
 import apiUrl from "../apiUrl";
-import "../styles/Login.scss";
+import NavBar from "./NavBar";
+import "../styles/UserForm.scss";
 
 const Login = ({ user, setUser }) => {
   const onEmailChange = (event) => {
@@ -44,52 +44,53 @@ const Login = ({ user, setUser }) => {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <NavBar user={user} setUser={setUser} />
-      <article className="">
-        <main className="">
-          <div className="">
-            <fieldset id="sign_up" className="">
-              <legend className="">Log In</legend>
-              <div className="">
-                <label className="" htmlFor="email-address">
+      <article className="main-content">
+        <main className="form-container">
+          <div className="form-content">
+            <fieldset id="sign_up" className="form-fieldset">
+              <legend className="form-legend">Log In</legend>
+              <div className="form-group">
+                <label className="form-label" htmlFor="email-address">
                   Email
                 </label>
                 <input
                   onChange={onEmailChange}
-                  className=""
+                  className="form-input"
                   type="email"
                   name="email-address"
                   id="email-address"
                 />
               </div>
-              <div className="">
-                <label className="" htmlFor="password">
+              <div className="form-group">
+                <label className="form-label" htmlFor="password">
                   Password
                 </label>
                 <input
                   onChange={onPasswordChange}
-                  className=""
+                  className="form-input"
                   type="password"
                   name="password"
                   id="password"
                 />
               </div>
             </fieldset>
-            <div>
+            <div className="form-button-container">
               <button
                 onClick={onSubmitLogin}
-                className=""
+                className="form-submit-button"
                 type="submit"
                 value="Log In"
-              />
+              >
+                Enter
+              </button>
             </div>
-            <div className="">
-              <div className="register-link-container">
-                <Link to="/register" className="register-link">
-                  Register
-                </Link>
-              </div>
+
+            <div className="link-container">
+              <Link to="/register" className="link">
+                Register
+              </Link>
             </div>
           </div>
         </main>

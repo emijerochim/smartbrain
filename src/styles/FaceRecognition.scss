@@ -1,13 +1,29 @@
 .face-recognition {
-  border: 1px solid #000;
   position: relative;
-}
-
-.bounding-box {
-  position: absolute;
-  box-shadow: 0 0 0 3px #149df2 inset;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  cursor: pointer;
+  align-items: center;
+  height: auto;
+  width: 500px;
+  margin: 0 auto;
+
+  .input-image {
+    width: 30vw;
+    height: auto;
+  }
+  @media only screen and (max-width: 767px) {
+    .input-image {
+      width: 90vw;
+      height: auto;
+    }
+  }
+
+  .bounding-box {
+    position: absolute;
+    box-shadow: 0 0 0 3px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+  }
 }

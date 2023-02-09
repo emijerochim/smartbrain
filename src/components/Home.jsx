@@ -3,6 +3,7 @@ import FaceRecognition from "./FaceRecognition";
 import InputForm from "./InputForm";
 import NavBar from "./NavBar";
 import apiUrl from "../apiUrl";
+import "../styles/Home.scss";
 
 function Home({ user, setUser }) {
   const [input, setInput] = useState("");
