@@ -7,7 +7,8 @@ const InputForm = ({ onInputChange, onButtonSubmit }) => {
       <div className="input-form-header">
         <h1 className="input-form-title">Smart Brain 🧠</h1>
         <p className="input-form-description">
-          Enter a URL of an image and an AI 🤖 will detect the faces in it
+          Enter a URL of an image and an AI 🤖
+          <br></br> will detect the faces in it
         </p>
       </div>
       <div className="input-form-container">
