@@ -67,7 +67,7 @@ function Home({ user, setUser }) {
   };
 
   return (
-    <main className="home_main">
+    <main className="home-main">
       <NavBar user={user} setUser={setUser} />
       <InputForm
         onInputChange={onInputChange}

@@ -6,13 +6,13 @@
   background-color: #333;
   color: #fff;
   padding: 0 20px;
-  height: 10vh;
+  height: 100px;
 
   .navbar-container {
     width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     .navbar-logo {

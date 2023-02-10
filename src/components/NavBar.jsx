@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../styles/brain.png";
 import "../styles/NavBar.scss";
 
@@ -14,7 +15,9 @@ const NavBar = ({ user, setUser }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src={Logo} alt="logo" className="logo" />
+          <Link to="/" className="link">
+            <img src={Logo} alt="logo" className="logo" />
+          </Link>
         </div>
         <div className="navbar-username">
           {user.loggedIn ? (
