@@ -8,7 +8,6 @@ import "../styles/Home.scss";
 function Home({ user, setUser }) {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [urlIsValid, setUrlIsValid] = useState(false);
   const [boxes, setBoxes] = useState([]);
 
   const fetchBoxes = async (input) => {

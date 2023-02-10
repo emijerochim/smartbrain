@@ -1,29 +1,36 @@
-.face-recognition {
-  position: relative;
+.face-recognition-container {
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  height: auto;
-  width: 500px;
-  margin: 10vh auto;
+  justify-content: center;
 
-  .input-image {
+  .face-recognition {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: auto;
-    width: 500px;
-  }
-  @media only screen and (max-width: 767px) {
+    width: 50%;
+
     .input-image {
-      width: 90vw;
       height: auto;
+      width: 100%;
+    }
+
+    .bounding-box {
+      position: absolute;
+      box-shadow: 0 0 0 3px #149df2 inset;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      cursor: pointer;
     }
   }
-
-  .bounding-box {
-    position: absolute;
-    box-shadow: 0 0 0 3px #149df2 inset;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    cursor: pointer;
+  @media only screen and (max-width: 767px) {
+    .face-recognition {
+      width: 90%;
+    }
   }
 }
