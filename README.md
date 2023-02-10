@@ -3,10 +3,10 @@
 This is a frontend app built using React in which a user can paste a image URL and the app will detect the faces on it.
 
 <div>
-  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/styles/1.png" height="400px">
-  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/styles/2.png" height="400px">
-  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/styles/3.png" height="400px">
-  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/styles/4.png" height="400px">
+  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/1.png" height="400px">
+  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/2.png" height="400px">
+  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/3.png" height="400px">
+  <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/4.png" height="400px">
 </div>
 
 ## Stack

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../styles/brain.png";
+import Logo from "../assets/brain.png";
 import "../styles/NavBar.scss";
 
 const NavBar = ({ user, setUser }) => {
