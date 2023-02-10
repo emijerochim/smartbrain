@@ -1,13 +1,19 @@
 ## 🧠 smartbrain
 
-This is a frontend app built using React in which a user can paste a image URL and the app will detect the faces on it.
-
 <div>
   <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/1.png" height="350px">
   <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/2.png" height="350px">
   <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/3.png" height="350px">
   <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/4.png" height="350px">
 </div>
+
+
+## Installation ▶️
+
+1. Clone the repository using `git clone https://github.com/emijerochim/smartbrain.git`.
+2. Enter the project directory using `cd smartbrain`.
+3. Install the required packages by running `npm install`.
+4. Run the app with `npm start`.
 
 ## Stack
 
@@ -31,12 +37,6 @@ The app has the following features:
 - Image URL submission and face detection through the backend RESTful API
 - Display of the bounding box around the detected face on the image
 
-## Running the Code ▶️
-
-1. Clone the repository using `git clone https://github.com/emijerochim/smartbrain.git`.
-2. Enter the project directory using `cd smartbrain`.
-3. Install the required packages by running `npm install`.
-4. Start the development server with `npm start`.
 
 ## Contact
 
