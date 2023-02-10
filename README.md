@@ -7,7 +7,7 @@
   <img src="https://github.com/emijerochim/smartbrain/blob/master/src/assets/4.png" height="350px">
 </div>
 
-
+<br></br>
 ## Installation ▶️
 
 1. Clone the repository using `git clone https://github.com/emijerochim/smartbrain.git`.
@@ -15,7 +15,16 @@
 3. Install the required packages by running `npm install`.
 4. Run the app with `npm start`.
 
-## Stack
+<br></br>
+## Features 🚀
+
+- User registration and login through JWT Authentication
+- Image URL submission and face detection through the backend RESTful API
+- Display of the bounding box around the detected face on the image
+
+
+<br></br>
+## Stack 🧰
 
 ### 📱 [Frontend](http://github.com/emijerochim/smartbrain)
 
@@ -29,21 +38,14 @@
 
 - PostgreSQL
 
-## Features 🚀
-
-The app has the following features:
-
-- User registration and login through JWT Authentication
-- Image URL submission and face detection through the backend RESTful API
-- Display of the bounding box around the detected face on the image
-
-
-## Contact
+<br></br>
+## Contact 👋
 
 - 💼 You can see my portfolio at <a href="https://emijerochim.com/">emijerochim.com</a>
 - ✉️ Mail me at <a href="mailto:dev@emijerochim.com/">dev@emijerochim.com</a></p>
 
----
+<br></br>
+___________
 
 ### Frontend code:
 
