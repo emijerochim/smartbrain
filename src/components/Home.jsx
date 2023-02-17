@@ -3,6 +3,7 @@ import FaceRecognition from "./FaceRecognition";
 import InputForm from "./InputForm";
 import NavBar from "./NavBar";
 import apiUrl from "../apiUrl";
+import Footer from "./Footer";
 import "../styles/Home.scss";
 
 function Home({ user, setUser }) {
@@ -74,6 +75,7 @@ function Home({ user, setUser }) {
         onButtonSubmit={onButtonSubmit}
       />
       <FaceRecognition imageUrl={imageUrl} boxes={boxes} />
+      <Footer />
     </main>
   );
 }

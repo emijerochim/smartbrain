@@ -1,5 +1,5 @@
-import "./footer.scss";
-import github from "../../assets/github.svg";
+import "../styles/Footer.scss";
+import github from "../assets/github.svg";
 
 function Footer() {
   return (

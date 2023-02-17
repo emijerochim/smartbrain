@@ -1,9 +1,9 @@
 .input-form-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: stretch;
   align-items: center;
   flex-direction: column;
-  height: 60vh;
+  height: 80vh;
   width: 100%;
 
   .input-form-header {
