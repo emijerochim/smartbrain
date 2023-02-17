@@ -38,6 +38,12 @@
 
 - PostgreSQL
 
+### 📚 Libraries
+- Clarifai API
+
+### ☁️ Deploy
+- GitHub Pages
+
 <br></br>
 ## Contact 👋
 
@@ -56,4 +62,4 @@ ___________
 - [github.com/emijerochim/smartbrain-api](http://github.com/emijerochim/smartbrain-api)
 
 <br></br>
-### [🧠 Try the demo](http://smartbrain-production.up.railway.app)
+### [🧠 Try the demo]https://emijerochim.github.io/smartbrain)
