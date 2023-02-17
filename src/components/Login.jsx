@@ -97,8 +97,8 @@ const Login = ({ user, setUser }) => {
           <p className="test-login-data">
             If you want to test the app use these credentials
           </p>
-          <p className="test-login-data">Username: test</p>
-          <p className="test-login-data">Password: TEST1234</p>
+          <p className="test-login-data">Email: test@gmail.com</p>
+          <p className="test-login-data">Password: Test1234</p>
         </div>
       </article>
     </div>
