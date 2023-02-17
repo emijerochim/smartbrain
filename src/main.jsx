@@ -5,7 +5,7 @@ import App from "./App";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <HashRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter>
     <App />
   </HashRouter>
 );

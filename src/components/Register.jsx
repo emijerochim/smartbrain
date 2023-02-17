@@ -50,7 +50,7 @@ const Register = ({ user, setUser }) => {
     <div className="register">
       <NavBar user={user} setUser={setUser} />
       <article className="main-content">
-        <main className="form-container">
+        <main className="form-container register-container">
           <div className="form-content">
             <fieldset id="sign_up" className="form-fieldset">
               <legend className="form-legend">Register</legend>

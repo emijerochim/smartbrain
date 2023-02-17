@@ -49,7 +49,7 @@ const Login = ({ user, setUser }) => {
       <article className="main-content">
         <main className="form-container">
           <div className="form-content">
-            <fieldset id="sign_up" className="form-fieldset">
+            <fieldset className="form-fieldset" id="sign_up">
               <legend className="form-legend">Log In</legend>
               <div className="form-group">
                 <label className="form-label" htmlFor="email-address">
@@ -86,7 +86,6 @@ const Login = ({ user, setUser }) => {
                 Enter
               </button>
             </div>
-
             <div className="link-container">
               <Link to="/register" className="link">
                 Register
@@ -94,6 +93,13 @@ const Login = ({ user, setUser }) => {
             </div>
           </div>
         </main>
+        <div className="test-login-data-container">
+          <p className="test-login-data">
+            If you want to test the app use these credentials
+          </p>
+          <p className="test-login-data">Username: test</p>
+          <p className="test-login-data">Password: TEST1234</p>
+        </div>
       </article>
     </div>
   );
