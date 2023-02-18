@@ -38,10 +38,10 @@ const Login = ({ user, setUser }) => {
     })
       .then((res) => {
         if (res.status === 400) {
-          toast.error("Email not found", { toastConfig });
+          toast.error("Email not found", toastConfig);
         }
         if (res.status === 401) {
-          toast.error("Password incorrect", { toastConfig });
+          toast.error("Password incorrect", toastConfig);
         }
         return res.json();
       })
