@@ -43,6 +43,9 @@ const Login = ({ user, setUser }) => {
         if (res.status === 401) {
           toast.error("Password incorrect", toastConfig);
         }
+        if (res.status === 200) {
+          toast.success("Login successful", toastConfig);
+        }
         return res.json();
       })
       .then((data) => {
