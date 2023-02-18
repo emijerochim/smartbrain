@@ -1,9 +1,6 @@
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: 80px;
   width: 100vw;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -11,7 +8,6 @@
   background-color: #333;
   color: #fff;
   padding: 0 20px;
-  height: 80px;
   z-index: 100;
 
   .navbar-container {

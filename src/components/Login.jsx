@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import apiUrl from "../apiUrl";
 import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/UserForm.scss";
 
 const Login = ({ user, setUser }) => {
@@ -10,6 +12,16 @@ const Login = ({ user, setUser }) => {
   };
   const onPasswordChange = (event) => {
     setUser({ ...user, password: event.target.value });
+  };
+
+  const toastConfig = {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
   };
 
   const onSubmitLogin = () => {
@@ -24,7 +36,15 @@ const Login = ({ user, setUser }) => {
         password: user.password,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 400) {
+          toast.error("Email not found", { toastConfig });
+        }
+        if (res.status === 401) {
+          toast.error("Password incorrect", { toastConfig });
+        }
+        return res.json();
+      })
       .then((data) => {
         if (data.user) {
           setUser({
@@ -44,7 +64,8 @@ const Login = ({ user, setUser }) => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="login">
+      <ToastContainer />
       <NavBar user={user} setUser={setUser} />
       <article className="main-content">
         <main className="form-container">
@@ -75,17 +96,19 @@ const Login = ({ user, setUser }) => {
                   id="password"
                 />
               </div>
+
+              <div className="form-button-container">
+                <button
+                  onClick={onSubmitLogin}
+                  className="form-submit-button"
+                  type="submit"
+                  value="Log In"
+                >
+                  Enter
+                </button>
+              </div>
             </fieldset>
-            <div className="form-button-container">
-              <button
-                onClick={onSubmitLogin}
-                className="form-submit-button"
-                type="submit"
-                value="Log In"
-              >
-                Enter
-              </button>
-            </div>
+
             <div className="link-container">
               <Link to="/register" className="link">
                 Register

@@ -1,12 +1,12 @@
 @use "./NavBar.scss";
 
 .main-content {
-  padding: 40px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  margin-bottom: 10vh;
 
   .form-container {
     background-color: transparent;
@@ -14,19 +14,18 @@
     border-radius: 10px;
     width: 90vw;
     max-width: 600px;
-    height: auto;
+    height: 100%;
     padding: 40px;
-    margin-top: 20vh;
+    margin-top: 10vh;
 
     .form-content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 100%;
 
       .form-fieldset {
-        border: none;
         width: 100%;
-        margin-top: 3vh;
 
         .form-legend {
           font-size: 34px;
@@ -102,15 +101,11 @@
     }
   }
 
-  .register-container {
-    margin-top: 10vh;
-  }
-
   .test-login-data-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 3vh;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 10px;
