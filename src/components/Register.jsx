@@ -45,7 +45,10 @@ const Register = ({ user, setUser }) => {
           toast.error("Email format is invalid", toastConfig);
         }
         if (res.status === 401) {
-          toast.error("Password should have 8 to 20 characters", toastConfig);
+          toast.error(
+            "Password should have 8 to 20 characters and at least 1 number",
+            toastConfig
+          );
         }
         if (res.status === 402) {
           toast.error("Username is already taken", toastConfig);
@@ -54,7 +57,7 @@ const Register = ({ user, setUser }) => {
           toast.error("Email is already taken", toastConfig);
         }
         if (res.status === 404) {
-          toast.error("Username format is invalid", toastConfig);
+          toast.error("Username should have 3 to 20 characters", toastConfig);
         }
         if (res.status === 200) {
           toast.success("Registration successful", toastConfig);
